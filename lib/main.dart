@@ -113,11 +113,11 @@ class _RootScreenState extends State<RootScreen> {
   Widget? _screen() {
     switch (index) {
       case 0:
-        return const HomeScreen();
+        return const SafeArea(child: HomeScreen());
       case 1:
-        return const RequestsScreen();
+        return const SafeArea(child: RequestsScreen());
       case 2:
-        return const CallFirmScreen();
+        return const SafeArea(child: CallFirmScreen());
       case 3:
       // return const LoginScreen();
       case 4:

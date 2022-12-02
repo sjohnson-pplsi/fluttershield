@@ -13,10 +13,12 @@ class FlutterShield extends StatelessWidget {
     return MaterialApp(
         home: const RootScreen(),
         theme: ThemeData(
+            backgroundColor: Colors.white,
+            canvasColor: Colors.white,
             appBarTheme: AppBarTheme(
-          backgroundColor: Colors.white,
-          elevation: 1,
-        )));
+              backgroundColor: Colors.white,
+              elevation: 1,
+            )));
   }
 }
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fluttershield/large_button.dart';
+import 'package:fluttershield/components/large_button.dart';
 
 class CallFirmScreen extends StatelessWidget {
   const CallFirmScreen({super.key});

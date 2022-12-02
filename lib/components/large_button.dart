@@ -22,7 +22,7 @@ class LargeButton extends StatelessWidget {
           backgroundColor: MaterialStateProperty.all(
               type == LargeButtonType.primary
                   ? Colors.black
-                  : Color(0xffCE0220))),
+                  : const Color(0xffCE0220))),
       child: SizedBox(
         width: double.infinity,
         child: Column(

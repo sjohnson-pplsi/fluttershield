@@ -47,7 +47,7 @@ class HeroSection extends StatelessWidget {
                 ? EdgeInsets.only(left: 160, right: 160, top: 50, bottom: 50)
                 : const EdgeInsets.only(left: 16, right: 16, bottom: 5),
             margin: constraints.maxWidth > 800
-                ? EdgeInsets.all(100)
+                ? EdgeInsets.only(top: 50)
                 : EdgeInsets.all(0),
             decoration: BoxDecoration(
                 borderRadius: constraints.maxWidth > 800

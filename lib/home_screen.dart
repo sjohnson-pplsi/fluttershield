@@ -10,51 +10,55 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: Colors.black,
       body: SingleChildScrollView(
         child: Column(
-          children: [
-            Container(
-              padding: EdgeInsets.only(left: 16, right: 16, bottom: 5),
-              decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                      colors: [
-                    // ["#5D5FD1", "#9820E1", "#A55DE2"
-                    Color(0xff5D5FD1),
-                    Color(0xff9820E1),
-                    Color(0xffA55DE2),
-                  ])),
-              // color: Color(0xff7249d6),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  _header(),
-                  _descriptionText(),
-                  _buttonContainer(),
-                ],
-              ),
-            ),
-            Container(
-              padding:
-                  EdgeInsets.only(left: 16, top: 34, right: 16, bottom: 50),
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    _entitlementTitle(),
-                    _entitlementDescription(),
-                    Image.asset('assets/family.png'),
-                  ]),
-            ),
+          children: const [
+            HeroSection(),
+            EntitlementFeature(),
           ],
         ),
       ),
     );
   }
+}
 
-  Widget _header() {
+class HeroSection extends StatelessWidget {
+  const HeroSection({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.only(left: 16, right: 16, bottom: 5),
+      decoration: const BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+            Color(0xff5D5FD1),
+            Color(0xff9820E1),
+            Color(0xffA55DE2),
+          ])),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: const [
+          Header(),
+          DescriptionText(),
+          ButtonContainer(),
+        ],
+      ),
+    );
+  }
+}
+
+class Header extends StatelessWidget {
+  const Header({super.key});
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(top: 24),
       child: const Text(
-        "Get legal\nhelp now",
+        "Get legal help now",
         style: TextStyle(
             color: Colors.white,
             fontFamily: 'SwiftJustice',
@@ -63,34 +67,83 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
+}
 
-  Widget _descriptionText() {
+class DescriptionText extends StatelessWidget {
+  const DescriptionText({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(top: 16, bottom: 80),
       child: const Text(
           "Legal issues can be confusing, complicated, and even a little embarrassing.  We are here to help",
-          style: TextStyle(color: Colors.white, fontSize: 20)),
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+          )),
     );
   }
+}
 
-  Widget _buttonContainer() {
+class ButtonContainer extends StatelessWidget {
+  const ButtonContainer({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.fromLTRB(0, 0, 0, 40),
-      child: LargeButton(text: "Request a consult"),
+      padding: const EdgeInsets.fromLTRB(0, 0, 0, 40),
+      child: const LargeButton(text: "Request a consult"),
     );
   }
+}
 
-  Widget _entitlementTitle() {
+class EntitlementFeature extends StatelessWidget {
+  const EntitlementFeature({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.only(),
-        child: Text("Explore your features",
+      padding: const EdgeInsets.only(left: 16, top: 34, right: 16, bottom: 50),
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        const EntitlementTitle(),
+        const EntitlementDescription(),
+        Image.asset('assets/family.png'),
+      ]),
+    );
+  }
+}
+
+class EntitlementTitle extends StatelessWidget {
+  const EntitlementTitle({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        padding: const EdgeInsets.only(),
+        child: const Text("Explore your features",
             style: TextStyle(color: Colors.white, fontSize: 20)));
   }
+}
 
-  Widget _entitlementDescription() {
+class EntitlementDescription extends StatelessWidget {
+  const EntitlementDescription({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 8, bottom: 16),
-      child: Text(
+      padding: const EdgeInsets.only(top: 8, bottom: 16),
+      child: const Text(
           "Want to better understand your plan?  We've got you covered.",
           style: TextStyle(
               color: Colors.white,

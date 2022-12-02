@@ -9,7 +9,12 @@ class RequestsScreen extends StatelessWidget {
       body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         _title(),
         _description(),
-        Expanded(child: ListView(children: [_serviceRequest()]))
+        Expanded(
+            child: ListView(children: [
+          _serviceRequest(),
+          _serviceRequest(),
+          _serviceRequest()
+        ]))
       ]),
     );
   }
